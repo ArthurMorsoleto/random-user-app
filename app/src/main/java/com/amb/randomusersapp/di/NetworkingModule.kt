@@ -33,6 +33,6 @@ class NetworkingModule {
     private fun provideService(retrofit: Retrofit) = retrofit.create(RandomApi::class.java)
 
     companion object {
-        const val RANDOM_USER_API_BASE_URL = "https://random-data-api.com/api/v2"
+        const val RANDOM_USER_API_BASE_URL = "https://random-data-api.com/api/"
     }
 }

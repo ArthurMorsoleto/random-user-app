@@ -4,6 +4,7 @@ import android.app.Application
 import com.amb.randomusersapp.di.NetworkingModule
 import com.amb.randomusersapp.di.RepositoryModule
 import com.amb.randomusersapp.di.UseCaseModule
+import com.amb.randomusersapp.di.ViewModelModule
 import org.koin.core.context.startKoin
 
 class MyApplication : Application() {
@@ -15,7 +16,8 @@ class MyApplication : Application() {
             modules(
                 NetworkingModule().networkModule,
                 RepositoryModule().repositoryModule,
-                UseCaseModule().useCaseModule
+                UseCaseModule().useCaseModule,
+                ViewModelModule().viewModelModule
             )
         }
     }
