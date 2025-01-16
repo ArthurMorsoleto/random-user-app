@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "RandomUsersApp"
 include(":app")
 include(":random-users")
+include(":support")

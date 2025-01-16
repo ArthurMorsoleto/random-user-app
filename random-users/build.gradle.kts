@@ -41,6 +41,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":support"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -61,10 +62,7 @@ dependencies {
     implementation(libs.koin.android)
     implementation(libs.koin.androidx.compose)
 
-    implementation(libs.retrofit)
     implementation(libs.converter.gson)
-    implementation(libs.okhttp)
-    implementation(libs.logging.interceptor)
 
     implementation(libs.coil3.coil.compose)
     implementation(libs.coil.network.okhttp)

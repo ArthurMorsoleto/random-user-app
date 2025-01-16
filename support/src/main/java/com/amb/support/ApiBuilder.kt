@@ -1,4 +1,4 @@
-package com.amb.randomusersapp.network
+package com.amb.support
 
 import kotlin.reflect.KClass
 
