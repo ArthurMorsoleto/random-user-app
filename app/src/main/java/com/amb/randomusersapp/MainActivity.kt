@@ -1,14 +1,16 @@
 package com.amb.randomusersapp
 
-import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.amb.randomusersapp.presentation.RandomUserActivity
+import com.amb.random.users.RandomUsersInitializer
 
 class MainActivity : AppCompatActivity() {
+
+    private val button: Button by lazy { findViewById(R.id.bt_start) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +23,8 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        startActivity(Intent(this, RandomUserActivity::class.java))
+        button.setOnClickListener {
+            RandomUsersInitializer.openRandomUserScreen(this)
+        }
     }
 }

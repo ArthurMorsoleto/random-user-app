@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">RandomUsersApp</string>
-    <string name="title_activity_random_user">RandomUserActivity</string>
+    <string name="init_random_users">Init Random Users</string>
 </resources>
