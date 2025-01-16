@@ -51,7 +51,7 @@ android {
 
 dependencies {
     implementation(project(":random-users"))
-    implementation(project(":support"))
+    implementation(project(":network"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
