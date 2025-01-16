@@ -1,5 +1,7 @@
 package com.amb.randomusersapp.presentation
 
+import androidx.compose.runtime.State
+import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.amb.randomusersapp.common.Response
@@ -10,20 +12,31 @@ class RandomUserViewModel(
     private val useCase: RandomUserUseCase
 ) : ViewModel() {
 
+    private val _viewState = mutableStateOf(RandomUserViewState())
+    val viewState: State<RandomUserViewState> = _viewState
+
+    init {
+        getRandomUser()
+    }
+
     fun getRandomUser() = viewModelScope.launch {
         useCase().collect { result ->
-            when (result) {
+            _viewState.value = when (result) {
                 is Response.Success -> {
-                    // TODO show user info
+                    RandomUserViewState(
+                        isLoading = false,
+                        userData = result.data
+                    )
                 }
 
                 is Response.Error -> {
-                    // TODO show error
+                    RandomUserViewState(
+                        isLoading = false,
+                        error = result.message
+                    )
                 }
 
-                is Response.Loading -> {
-                    // TODO show loading
-                }
+                is Response.Loading -> RandomUserViewState(isLoading = true)
             }
         }
     }

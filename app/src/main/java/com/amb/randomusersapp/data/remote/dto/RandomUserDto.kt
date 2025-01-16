@@ -41,6 +41,7 @@ data class RandomUserDto(
             lastName = lastName,
             avatar = avatar,
             dateOfBirth = dateOfBirth,
+            email = email,
             employment = UserEmployment(
                 title = employment.title
             ),
