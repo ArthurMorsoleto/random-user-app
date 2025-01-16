@@ -8,6 +8,6 @@ internal class NetworkingModule(
     apiBuilder: ApiBuilder
 ) {
     val networkModule = module {
-//        factory { apiBuilder.build(RandomApi::class) }
+        factory { apiBuilder.build(RandomApi::class) }
     }
 }
