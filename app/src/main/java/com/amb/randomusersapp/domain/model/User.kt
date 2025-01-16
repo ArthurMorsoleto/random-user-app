@@ -6,5 +6,6 @@ data class User(
     val avatar: String,
     val dateOfBirth: String,
     val employment: UserEmployment,
-    val address: UserAddress
+    val address: UserAddress,
+    val email: String
 )
