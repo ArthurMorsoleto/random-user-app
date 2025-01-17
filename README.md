@@ -1,4 +1,4 @@
-Randomizer using [RandomDataAPI](https://random-data-api.com/)
+Clean Architecture Randomizer App - MVVM/Use Cases/Compose - using [RandomDataAPI](https://random-data-api.com/)
 
 Docs: https://random-data-api.com/documentation
 
