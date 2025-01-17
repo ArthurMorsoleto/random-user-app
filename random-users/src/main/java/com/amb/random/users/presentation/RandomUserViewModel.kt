@@ -4,7 +4,7 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.amb.random.users.common.Response
+import com.amb.network.common.Response
 import com.amb.random.users.domain.usecase.RandomUserUseCase
 import kotlinx.coroutines.launch
 

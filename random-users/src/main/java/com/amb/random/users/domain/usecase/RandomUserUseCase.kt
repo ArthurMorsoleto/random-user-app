@@ -1,6 +1,6 @@
 package com.amb.random.users.domain.usecase
 
-import com.amb.random.users.common.Response
+import com.amb.network.common.Response
 import com.amb.random.users.domain.model.User
 import com.amb.random.users.domain.repository.RandomUserRepository
 import kotlinx.coroutines.flow.Flow
