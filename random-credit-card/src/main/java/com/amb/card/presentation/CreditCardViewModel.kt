@@ -1,5 +1,7 @@
 package com.amb.card.presentation
 
+import androidx.compose.runtime.State
+import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.amb.card.domain.model.CreditCard
@@ -13,27 +15,34 @@ internal class CreditCardViewModel(
     private val useCase: GetCreditCardUseCase
 ) : ViewModel() {
 
+    private val _viewState = mutableStateOf(CreditCardViewState())
+    val viewState: State<CreditCardViewState> = _viewState
+
     init {
         getCreditCard()
     }
 
-    private fun getCreditCard() {
-        viewModelScope.launch {
-            useCase().onEach { response: Response<CreditCard> ->
-                when (response) {
-                    is Response.Error -> {
-                        // TODO
-                    }
-
-                    is Response.Loading -> {
-                        // TODO
-                    }
-
-                    is Response.Success -> {
-                        // TODO
-                    }
+    private fun getCreditCard() = viewModelScope.launch {
+        useCase().onEach { response: Response<CreditCard> ->
+            _viewState.value = when (response) {
+                is Response.Error -> {
+                    CreditCardViewState(
+                        isLoading = false,
+                        error = response.message
+                    )
                 }
-            }.launchIn(this)
-        }
+
+                is Response.Loading -> {
+                    CreditCardViewState(isLoading = true)
+                }
+
+                is Response.Success -> {
+                    CreditCardViewState(
+                        isLoading = false,
+                        data = response.data
+                    )
+                }
+            }
+        }.launchIn(this)
     }
 }

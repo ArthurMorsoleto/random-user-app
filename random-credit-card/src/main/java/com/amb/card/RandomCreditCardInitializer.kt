@@ -3,7 +3,7 @@ package com.amb.card
 import android.content.Context
 import android.content.Intent
 import com.amb.card.di.modules.CreditCardModuleProvider
-import com.amb.card.presentation.RandomCreditCardActivity
+import com.amb.card.presentation.CreditCardActivity
 import com.amb.network.ApiBuilder
 import org.koin.core.module.Module
 
@@ -14,6 +14,6 @@ object RandomCreditCardInitializer {
     }
 
     fun openRandomCreditCardScreen(context: Context) {
-        context.startActivity(Intent(context, RandomCreditCardActivity::class.java))
+        context.startActivity(Intent(context, CreditCardActivity::class.java))
     }
 }

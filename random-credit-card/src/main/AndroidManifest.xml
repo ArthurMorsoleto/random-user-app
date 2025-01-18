@@ -3,7 +3,7 @@
 
     <application>
         <activity
-            android:name="com.amb.card.presentation.RandomCreditCardActivity"
+            android:name="com.amb.card.presentation.CreditCardActivity"
             android:exported="false"
             android:label="@string/title_activity_random_credit_card"
             android:theme="@style/Theme.RandomUsersApp" />
