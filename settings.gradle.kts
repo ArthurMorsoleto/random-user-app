@@ -23,3 +23,4 @@ rootProject.name = "RandomUsersApp"
 include(":app")
 include(":random-users")
 include(":network")
+include(":random-credit-card")

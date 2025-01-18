@@ -65,7 +65,7 @@ internal class RandomUserActivity : ComponentActivity() {
                     ProfileUserName(data)
                 }
                 ProfileDetails(data)
-                GetNewRandomUser { viewModel.getRandomUser() }
+                RefreshButton { viewModel.getRandomUser() }
             }
 
         }
@@ -166,7 +166,7 @@ internal class RandomUserActivity : ComponentActivity() {
     }
 
     @Composable
-    private fun GetNewRandomUser(onClick: () -> Unit) {
+    private fun RefreshButton(onClick: () -> Unit) {
         Column(
             modifier = Modifier.fillMaxWidth(),
             horizontalAlignment = Alignment.CenterHorizontally
