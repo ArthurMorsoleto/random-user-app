@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">RandomUsersApp</string>
-    <string name="init_random_users">Init Random Users</string>
+    <string name="init_random_users">Random User</string>
+    <string name="init_random_credit_card">Random Credit Card</string>
 </resources>

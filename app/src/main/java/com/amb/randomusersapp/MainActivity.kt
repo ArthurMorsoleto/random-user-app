@@ -6,11 +6,13 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.amb.card.RandomCreditCardInitializer
 import com.amb.random.users.RandomUsersInitializer
 
 class MainActivity : AppCompatActivity() {
 
-    private val button: Button by lazy { findViewById(R.id.bt_start) }
+    private val randomUserButton: Button by lazy { findViewById(R.id.bt_start) }
+    private val randomCreditCardButton: Button by lazy { findViewById(R.id.bt_creditcard) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,8 +25,11 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        button.setOnClickListener {
+        randomUserButton.setOnClickListener {
             RandomUsersInitializer.openRandomUserScreen(this)
+        }
+        randomCreditCardButton.setOnClickListener {
+            RandomCreditCardInitializer.openRandomCreditCardScreen(this)
         }
     }
 }
