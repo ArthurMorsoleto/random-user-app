@@ -7,7 +7,7 @@ import com.amb.random.users.di.modules.UseCaseModule
 import com.amb.random.users.di.modules.ViewModelModule
 import org.koin.core.module.Module
 
-internal object RandomUsersKoinContext {
+internal object RandomUsersModulesProvider {
 
     fun randomUsersModules(apiBuilder: ApiBuilder): List<Module> {
         return listOf(
